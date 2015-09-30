@@ -21,10 +21,20 @@ main = hspec $ do
       it "returns seven Whitespaces on 'E'" $ do
          inner 'E' `shouldBe` "       "
 
-   describe "createDiamond" $ do
-      it "returns String \"A\" in case of char 'A'" $ do
-         createDiamond 'A' `shouldBe` "A"
+   describe "outer" $ do
+      it "return empty string max size char" $ do
+         outer 9 'E' `shouldBe` ""
 
+      it "return one whitespace on max size predecessor" $ do
+         outer 9 'D' `shouldBe` " "
+
+      it "return half of max size for 'A'" $ do
+         outer 9 'A' `shouldBe` "    "
+
+   -- xdescribe "createDiamond" $ do
+   --    it "returns String \"A\" in case of char 'A'" $ do
+   --       createDiamond 'A' `shouldBe` "A"
+   --
       -- it "returns \"A\nB B\nA\" in case of char 'B'" $ do
       --    createDiamond 'B' `shouldBe` "A\nB B\nA"
 
