@@ -31,10 +31,24 @@ main = hspec $ do
       it "return half of max size for 'A'" $ do
          outer 9 'A' `shouldBe` "    "
 
-   -- xdescribe "createDiamond" $ do
+   describe "defineDiamondLines" $ do
+      it "returns A on 'A'" $ do
+         defineDiamondLines 'A' `shouldBe` "A"
+
+      it "returns ABA on 'B'" $ do
+         defineDiamondLines 'B' `shouldBe` "ABA"
+
+      it "returns ABCBA on 'C'" $ do
+         defineDiamondLines 'C' `shouldBe` "ABCBA"
+
+   -- describe "createDiamondLine" $ do
+   --    it "returns Empty String when maxLength is zero" $ do
+   --       createDiamondLine 0 'Z' `shouldBe` ""
+   --
+   -- describe "createDiamond" $ do
    --    it "returns String \"A\" in case of char 'A'" $ do
    --       createDiamond 'A' `shouldBe` "A"
    --
-      -- it "returns \"A\nB B\nA\" in case of char 'B'" $ do
-      --    createDiamond 'B' `shouldBe` "A\nB B\nA"
-
+   --    it "returns \"A\nB B\nA\" in case of char 'B'" $ do
+   --       createDiamond 'B' `shouldBe` "A\nB B\nA"
+   --
